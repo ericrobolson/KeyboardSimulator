@@ -19,7 +19,12 @@ KeyboardEventHandler::KeyboardEventHandler() {
 }
 
 void KeyboardEventHandler::PressKey(Keys k){
+	_pressedKeysHashTable[k] = true;
+
 	keybd_event(GetKeyCode(k), 0, 0, 0);
+
+
+
 }
 
 void KeyboardEventHandler::ReleaseKey(Keys k){
